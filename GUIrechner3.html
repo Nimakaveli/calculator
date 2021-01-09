@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GUI Rechner</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!--   <button id="test">Rechner</button>
+    <input id="display"> -->
+
+    <div class="wrapper">
+      <button id="test" class="test">calc</button>
+      <input id="display" />
+      <button id="gleich" class="zeichen">=</button>
+      <br />
+      <button id="7">7</button>
+      <button id="8">8</button>
+      <button id="9">9</button>
+
+      <button id="durchh" class="zeichen">/</button>
+      <br />
+      <button id="4">4</button>
+      <button id="5">5</button>
+      <button id="6">6</button>
+      <button id="pluss" class="zeichen">+</button>
+      <br />
+
+      <button id="1">1</button>
+      <button id="2">2</button>
+      <button id="3">3</button>
+      <button id="minuss" class="zeichen">-</button>
+      <br />
+      <button id="0" class="null">0</button>
+      <button id=".">.</button>
+      <button id="clear" class="zeichen">C</button>
+      <button id="mal" class="zeichen">x</button>
+    </div>
+    <script>
+      var display = document.getElementById("display");
+
+      var nix = document.getElementById("0");
+      var nuller = nix.addEventListener("click", numbers);
+
+      var eins = document.getElementById("1");
+      var einser = eins.addEventListener("click", numbers);
+
+      var zwei = document.getElementById("2");
+      var zweier = zwei.addEventListener("click", numbers);
+
+      var drei = document.getElementById("3");
+      var dreier = drei.addEventListener("click", numbers);
+
+      var vier = document.getElementById("4");
+      var vierer = vier.addEventListener("click", numbers);
+
+      var funf = document.getElementById("5");
+      var funfer = funf.addEventListener("click", numbers);
+
+      var sechs = document.getElementById("6");
+      var sechser = sechs.addEventListener("click", numbers);
+
+      var sieben = document.getElementById("7");
+      var siebener = sieben.addEventListener("click", numbers);
+
+      var acht = document.getElementById("8");
+      var achter = acht.addEventListener("click", numbers);
+
+      var neun = document.getElementById("9");
+      var neuner = neun.addEventListener("click", numbers);
+
+      var komma = document.getElementById(".");
+      var kommer = komma.addEventListener("click", numbers);
+
+      function numbers(event) {
+        var alt = display.value;
+        var num = event.currentTarget.id;
+        display.value = alt + num;
+      }
+
+      //BUTTONS
+
+      var plusi = document.getElementById("pluss");
+      var plusser = plusi.addEventListener("click", plusy);
+
+      var minusi = document.getElementById("minuss");
+      var minusser = minusi.addEventListener("click", minusy);
+
+      var durchi = document.getElementById("durchh");
+      var durcher = durchi.addEventListener("click", durchy);
+
+      var mali = document.getElementById("mal");
+      var maller = mali.addEventListener("click", maly);
+
+      var eq = document.getElementById("gleich");
+      var eq1 = eq.addEventListener("click", gleichi);
+
+      var c = document.getElementById("clear");
+      var c1 = c.addEventListener("click", deleter);
+
+      // Button Functions
+      function deleter() {
+        display.value = "";
+        test.innerHTML = "";
+      }
+
+      function gleichi() {
+        var nach = display.value;
+        var test = document.getElementById("test");
+        var erst = test.innerHTML;
+
+        if (erst.split(" ")[1] === "+") {
+          var res = parseFloat(erst.split(" ")[0]) + parseFloat(nach);
+        } else if (erst.split(" ")[1] === "-") {
+          var res = parseFloat(erst.split(" ")[0]) - parseFloat(nach);
+        } else if (erst.split(" ")[1] === "x") {
+          var res = parseFloat(erst.split(" ")[0]) * parseFloat(nach);
+        } else if (erst.split(" ")[1] === "/") {
+          var res = parseFloat(erst.split(" ")[0]) / parseFloat(nach);
+        }
+
+        display.value = res;
+      }
+
+      function plusy() {
+        var erst_plus = display.value;
+        var test = document.getElementById("test");
+        test.innerHTML = erst_plus + " +";
+        display.value = "";
+      }
+
+      function minusy() {
+        var erst_minus = display.value;
+        var test = document.getElementById("test");
+        test.innerHTML = erst_minus + " -";
+        display.value = "";
+      }
+
+      function durchy() {
+        var erst_durch = display.value;
+        var test = document.getElementById("test");
+        test.innerHTML = erst_durch + " /";
+        display.value = "";
+      }
+
+      function maly() {
+        var erst_mal = display.value;
+        var test = document.getElementById("test");
+        test.innerHTML = erst_mal + " x";
+        display.value = "";
+      }
+    </script>
+  </body>
+</html>

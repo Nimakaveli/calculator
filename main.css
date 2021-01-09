@@ -1,0 +1,42 @@
+button {
+  color: black;
+  font-size: 16px;
+  font: bold;
+  width: 10%;
+  border: grey;
+  margin:1.5%;
+
+}
+
+
+.zeichen {
+  color: white;
+  background-color: orange;
+  border: solid ;
+  font-size: 16px;
+  font: bold;
+
+  margin:1.5%;
+  width: 10%;
+
+}
+
+input{
+  
+  color: white;
+  background-color: black;
+  font-size: 16px;
+  font: bold;
+
+
+}
+
+.test{
+  
+  color: white;
+  background-color: black;
+  font-size: 16px;
+  font: bold;
+
+
+}
